@@ -1,0 +1,41 @@
+
+
+
+.title{
+    font-family: 'Courier New'Courier,monospace;
+}
+
+.square{
+    background-color: bisque;
+    width: 200px;
+    height: 200px;
+    border-radius: 20px;
+    margin: 50px auto;
+    transition:all 1s;
+}
+
+.square:hover{
+    background-color: brown;
+    transform: rotate(30deg);
+}
+
+.button-div{
+    text-align: center;
+}
+
+.button {
+    color: aliceblue;
+    background-color: black;
+    padding: 15px;
+    margin: 50px;
+    border-radius: 10px;
+    text-decoration: none;
+    display: inline-block;
+    transition: all .5s 
+}
+
+.button:hover{
+    background-color: rgb(192, 122, 227);
+    color: black;
+    transform: scale(1.5);
+}

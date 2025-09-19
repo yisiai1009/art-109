@@ -1,0 +1,86 @@
+
+body {
+   animation: change-color 10s infinite alternate;
+}
+
+@keyframes change-color {
+    0% {
+        background-color: antiquewhite;
+    }
+
+    50% {
+        background-color: yellow
+    }
+
+    100% {
+        background-color: aquamarine;
+    }
+}
+
+.title  {
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    margin: 80px auto;
+    animation: skew 3s infinite alternate;
+}
+
+@keyframes skew {
+    0%{
+        transform: skew(0deg, 0deg);
+    }
+
+    100% {
+        transform: skew(30deg,20deg);
+    }}
+
+.square {
+    background-color: rgb(64, 45, 22);
+    width: 200px;
+    height: 200px;
+    border-radius: 20px;
+    margin: 50px auto;
+    transition:all 1s;
+}
+
+.square:hover{
+    background-color: brown;
+    transform: rotate(30deg);
+}
+
+.button-div {
+    text-align: center;
+}
+
+.button {
+    color: aliceblue;
+    background-color: rgb(59, 188, 36);
+    padding: 15px;
+    margin: 50px auto;
+    border-radius: 10px;
+    text-decoration: none;
+    display: inline-block;
+    transition: all .5s 
+}
+
+.button:hover{
+    background-color: greenyellow;
+    color: black;
+    transform: scale(1.5);
+}
+
+.loading{
+    background-color: rgb(153, 153, 255) ;
+    animation: stretch 5s 3 normal;
+    width: 80vw;
+}
+
+
+@keyframes stretch {
+    0% {
+        width: 100px;
+    }
+
+    100% {
+        width: 80vw;
+    }
+}
