@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mood Buttons · Online Mood Machine</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+  <meta name="description" content="Click emojis to change mood, burst fireworks, and trigger surprise emoji rain.">
+</head>
+<body>
+  <!-- Effect layers -->
+  <div class="burst-layer" id="burst-layer" aria-hidden="true"></div>
+  <div class="rain-layer" id="rain-layer" aria-hidden="true"></div>
+
+  <div class="wrap">
+    <header class="center">
+      <h1 class="title">Mood Buttons — Online Mood Machine</h1>
+      <p class="subtitle">
+        Click a mood or any emoji. Fireworks on click. Certain emojis trigger full-screen “emoji rain”.
+      </p>
+      <nav class="links">
+        <a href="about.html">About / Artist Statement</a>
+        <a href="https://getemoji.com/" target="_blank" rel="noopener">Emoji reference (getemoji.com)</a>
+      </nav>
+    </header>
+
+    <main class="center">
+      <!-- Quick moods -->
+      <section class="panel">
+        <h2 class="panel-title">Quick Moods</h2>
+        <div class="grid mood-grid" aria-label="Mood buttons">
+          <button class="mood-btn" data-mood="happy" aria-label="happy">😃</button>
+          <button class="mood-btn" data-mood="sad" aria-label="sad">😢</button>
+          <button class="mood-btn" data-mood="angry" aria-label="angry">😡</button>
+          <button class="mood-btn" data-mood="sleepy" aria-label="sleepy">😴</button>
+        </div>
+      </section>
+
+      <!-- Emoji grid (only special ones) -->
+      <section class="panel">
+        <h2 class="panel-title">Tap Any Emoji</h2>
+        <p class="hint">💡 Rainbow gradient = this emoji triggers “rain”. Others make fireworks.</p>
+        <div id="emoji-grid" class="grid emoji-grid" aria-label="Emoji grid"></div>
+      </section>
+
+      <!-- Word-group buttons -->
+      <section class="panel">
+        <h2 class="panel-title">Emoji Groups (Word Buttons)</h2>
+        <p class="hint">
+          Click a group to burst a themed set. Source:
+          <a href="https://getemoji.com/" target="_blank" rel="noopener">getemoji.com</a>
+        </p>
+        <div id="word-grid" class="grid word-grid" aria-label="Word buttons"></div>
+      </section>
+
+      <!-- Status / share -->
+      <section class="panel">
+        <h2 class="panel-title">Status & Share</h2>
+        <div class="status">
+          <span><strong>Current mood:</strong> <span id="current-mood">none</span></span>
+          <span><strong>Sharable link:</strong> <span id="mood-link">current</span></span>
+          <button id="copy-link" class="btn" type="button">Copy link</button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="center">
+      <p>No cookies. Local effects only. Built with plain HTML/CSS/JS.</p>
+    </footer>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
