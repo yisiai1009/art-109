@@ -1,0 +1,199 @@
+* {
+  box-sizing: border-box;
+}
+
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  line-height: 1.7;
+  background:
+    linear-gradient(135deg, #050816 0%, #101735 40%, #030616 100%),
+    repeating-radial-gradient(circle at 20% 40%, #7df9ff22 0, #7df9ff00 40px),
+    repeating-radial-gradient(circle at 80% 70%, #ff6cff22 0, #ff6cff00 60px);
+  color: #f5f5ff;
+  overflow-x: hidden;
+  min-height: 100vh;
+  position: relative;
+  animation: bgMove 18s linear infinite alternate;
+}
+
+@keyframes bgMove {
+  0% { background-position: 0 0, 0 0, 0 0; }
+  100% { background-position: 0 0, 60px 40px, -80px -60px; }
+}
+
+
+.galaxy-banner {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  gap: 1.5em;
+  padding: 10px 0 6px;
+  font-size: 1.4rem;
+  background: linear-gradient(90deg, #1a1f3cdd 10%, #7df9ff33 50%, #1a1f3cdd 90%);
+  box-shadow: 0 2px 18px 0 #7df9ff44;
+  z-index: 10;
+  animation: floatGalaxy 8s ease-in-out infinite alternate;
+  backdrop-filter: blur(4px);
+}
+
+@keyframes floatGalaxy {
+  0%   { transform: translateX(-50%) translateY(0); }
+  100% { transform: translateX(-50%) translateY(8px); }
+}
+
+
+.decor {
+  position: fixed;
+  font-size: 22px;
+  opacity: 0.85;
+  z-index: -1;
+}
+
+
+.decor:not(:last-child) {
+  animation: twinkle 3.5s ease-in-out infinite alternate;
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.6;
+    filter: blur(0.5px);
+  }
+  50% {
+    opacity: 1;
+    filter: blur(2px);
+  }
+}
+
+
+.decor:last-child {
+  animation: rotate-planet 12s linear infinite;
+}
+
+@keyframes rotate-planet {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+.ufo {
+  position: fixed;
+  top: 120px;
+  left: -80px;
+  font-size: 40px;
+  animation: flyAcross 12s linear infinite;
+  z-index: -1;
+  filter: drop-shadow(0 0 18px #7df9ff) drop-shadow(0 0 32px #7df9ff88);
+}
+
+.ufo::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 60%;
+  width: 120px;
+  height: 18px;
+  background: radial-gradient(ellipse at left, #7df9ff88 60%, transparent 100%);
+  transform: translate(-60%, 0) rotate(-8deg);
+  filter: blur(6px);
+  opacity: 0.7;
+  pointer-events: none;
+  z-index: -2;
+}
+
+@keyframes flyAcross {
+  0%   { transform: translateX(0) rotate(-10deg); }
+  50%  { transform: translateX(120vw) rotate(10deg); }
+  100% { transform: translateX(0) rotate(-10deg); }
+}
+
+
+.site-header {
+  padding: 80px 0 20px; 
+}
+
+.header-inner {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.site-header h1 {
+  margin: 0;
+  font-size: 2.2rem;
+  letter-spacing: 0.04em;
+  text-shadow: 0 0 14px rgba(140, 160, 255, 0.8);
+}
+
+.subtitle {
+  margin-top: 6px;
+  font-size: 1rem;
+  color: #c1c5ff;
+}
+
+.meta {
+  margin-top: 4px;
+  font-size: 0.85rem;
+  color: #8a8fbe;
+}
+
+
+.content {
+  max-width: 760px;
+  margin: 20px auto 60px;
+  padding: 0 20px;
+}
+
+
+.essay {
+  background: rgba(12, 16, 40, 0.9);
+  padding: 26px 22px 28px;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.2);
+  backdrop-filter: blur(10px);
+  box-shadow:
+    0 0 24px 4px #7df9ff,
+    0 0 48px 8px #6c63ff33;
+}
+
+.essay p {
+  margin-bottom: 1.15em;
+  font-size: 0.98rem;
+  color: #e3e4ff;
+}
+
+.essay em {
+  color: #d4d7ff;
+}
+
+
+.site-footer {
+  text-align: center;
+  padding: 18px 0 30px;
+  font-size: 0.85rem;
+  color: #8a8fbe;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  background: transparent;
+}
+
+.footer-icon {
+  margin: 0 0.5em;
+  font-size: 1.3rem;
+  animation: footerGlow 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes footerGlow {
+  0% {
+    filter: drop-shadow(0 0 8px #7df9ff) drop-shadow(0 0 16px #6c63ff88);
+  }
+  100% {
+    filter: drop-shadow(0 0 16px #7df9ff) drop-shadow(0 0 32px #6c63ffcc);
+  }
+}
